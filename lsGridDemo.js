@@ -1,6 +1,4 @@
-var app = angular.module('app', [
-    'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
-]);
+var app = angular.module('app', ['lsGrid']);
 
 
 app.controller("demo", function ($scope) {

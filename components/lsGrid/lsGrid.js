@@ -1,4 +1,4 @@
-angular.module('lsGrid', [])
+angular.module('lsGrid', [ 'ui.bootstrap.pagination', 'lsPager'])
 
     .directive('lsGrid', ['$http', function($http) {
         return {

@@ -80,9 +80,7 @@ app.controller("demo", function ($scope) {
 <div style="margin: 20px;">
     <h4>Remote data with unknown structure,  headers created based on data. </h4>
 <pre style="height: 200px; width: 40%; overflow: auto">
-var app = angular.module('app', [
-    'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
-]);
+var app = angular.module('app', ['lsGrid']);
 app.controller("demo", function ($scope) {
    $scope.options2 = {
         tableWidth: '40%',
@@ -99,9 +97,7 @@ app.controller("demo", function ($scope) {
 <div style="margin: 20px;">
     <h4>No configuration at all</h4>
     <pre style="height: 130px; width: 40%; overflow: auto">
-var app = angular.module('app', [
-    'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
-]);
+var app = angular.module('app', ['lsGrid']);
 app.controller("demo", function ($scope) {
 });
 &lt;ls-grid>&lt;/ls-grid>
@@ -113,9 +109,7 @@ app.controller("demo", function ($scope) {
 <div style="margin: 20px;">
     <h4>Bad configuration: wrong remote URL</h4>
     <pre style="height: 200px; width: 40%; overflow: auto">
-var app = angular.module('app', [
-    'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
-]);
+var app = angular.module('app', ['lsGrid']);
 app.controller("demo", function ($scope) {
     $scope.options3 = {
         dataUrl: 'api/404.json'
