@@ -34,6 +34,7 @@ Available options are
 
 Required:
 data - {Array}
+ -OR-
 dataUrl - {String}
 
 Optional:
