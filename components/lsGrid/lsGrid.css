@@ -1,0 +1,20 @@
+.ls-grid {
+    font-size: 12px;
+}
+
+.ls-grid-header {
+    display: inline-block;
+    background-color: #2198e3;
+    padding: 3px;
+    color: #fff;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.ls-grid-cell {
+    display: inline-block;
+    padding: 3px;
+    min-width: 120px;
+    border: 1px #ccc solid
+}
+

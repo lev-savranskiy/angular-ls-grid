@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angular-ls-grid demo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!--VENDORS-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.min.js"></script>
+	<script src="scripts/vendor/angular-paging.js"></script>
+	<script src="scripts/vendor/angular-tabindex.js"></script>
+	<script src="scripts/vendor/angular-pagination.js"></script>
+
+	<!--COMPONENTS-->
+	<script src="components/lsPager/lsPager.js"></script>
+	<script src="components/lsGrid/lsGrid.js"></script>
+	<link rel="stylesheet" href="components/lsGrid/lsGrid.css" />
+
+	<!--APPLICATION-->
+	<script src="lsGridDemo.js"></script>
+
+
+</head>
+
+
+<body ng-app="app" ng-controller="demo">
+
+<div style="margin: 20px;">
+	<h4>Local data, auto key based headers</h4>
+	<ls-grid options="options"></ls-grid>
+</div>
+<hr/>
+<div style="margin: 20px;">
+	<h4>Remote data, 3 headers passed</h4>
+	<ls-grid options="options2"></ls-grid>
+</div>
+<hr/>
+<div style="margin: 20px;">
+	<h4>No configuration at all</h4>
+	<ls-grid></ls-grid>
+</div>
+<hr/>
+<div style="margin: 20px;">
+	<h4>Bad configuration: wrong remote URL</h4>
+	<ls-grid options="options3"></ls-grid>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<h5 class="" ng-switch on="itemsPerPage < totalItems"  ng-show="totalItems">
+    <div ng-switch-when="true">Showing {{(currentPage - 1 )*itemsPerPage + 1}} - {{currentPage * itemsPerPage < totalItems ? currentPage * itemsPerPage : totalItems}} of  {{totalItems}} entries</div>
+    <div ng-switch-when="false">{{totalItems}}
+        <ng-pluralize count="totalItems"   when="{'0': ' entries ',  '1': ' entry ',  'other': ' entries'}"/>
+         found</div>
+</h5>
+<h5 ng-show="!totalItems" class="fv-pager-info">No data found</h5>
+<div class="" ng-show="itemsPerPage < totalItems">
+    <uib-pagination
+            style="margin: 5px 0"
+            force-ellipses="false"
+            max-size="maxSize"
+            items-per-page="itemsPerPage"
+            ng-change="pageChanged(this)"
+            boundary-links="true"
+            total-items="totalItems"
+            ng-model="currentPage"
+            class="pagination-sm"
+            previous-text="&lsaquo;"
+            next-text="&rsaquo;"
+            first-text="&laquo;"
+            last-text="&raquo;"/>
+</div>
+<div class="clear"></div>
