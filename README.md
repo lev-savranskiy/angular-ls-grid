@@ -3,8 +3,8 @@ Simple AngularJS grid
 
 # Features
 * Data array or dataUrl is only  required config to start!
-* Headers can be auto  created
-* Sort by every column
+* Headers are  auto created if missing
+* Every column is sortable
 * Bottom toolbar with info and pagination
 * Clear folder structure
 
@@ -14,6 +14,8 @@ http://wap7.ru/folio/angular-ls-grid/index.html
 # Documentation
 
 ``` 
+
+Pass options to directive ls-grid 
 Available options are
 
 data - {Array}
@@ -21,17 +23,36 @@ dataUrl - {String}
 headers -  {Array}
 itemsPerPage - {Number}, 20 by default
 tableWidth - {css value}, 90% by default
-
-Pass options to directive ls-grid 
-
+----
+//EXAMPLE 1
+//Width,  itemsPerPage, dataUrl and  headers are passed
 $scope.options = {
-    tableWidth: '40%',
-    itemsPerPage: 10,
+    tableWidth: '600px',
+    itemsPerPage: 15,
     dataUrl: 'api/mydata.json',
     headers: {"name": "Name", "start_date": "Start Date", "clicks": "Clicks"}
 };
     
 <ls-grid options="options"></ls-grid> 
+----
+//EXAMPLE 2
+//Only data passed
+$scope.options2 = {
+    data: [{
+             "id": 358,
+             "name": "Skidoo",
+             "start_date": "2017-04-24",
+             "clicks": 66
+           }, {
+             "id": 548,
+             "name": "Flashspan",
+             "start_date": "2019-03-13",
+             "clicks": 107
+          }]
+
+};
+    
+<ls-grid options="options2"></ls-grid> 
 
 ```
 

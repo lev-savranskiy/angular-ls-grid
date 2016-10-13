@@ -508,7 +508,7 @@ app.controller("demo", function ($scope) {
 
 
     $scope.options = {
-        tableWidth: '60%',
+        tableWidth: '600px',
         itemsPerPage: 7,
         data: data
     };

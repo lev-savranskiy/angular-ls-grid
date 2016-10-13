@@ -1,53 +1,130 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>angular-ls-grid demo</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>ls-grid demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-	<!--VENDORS-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!--VENDORS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.min.js"></script>
+    <script src="scripts/vendor/angular-paging.js"></script>
+    <script src="scripts/vendor/angular-tabindex.js"></script>
+    <script src="scripts/vendor/angular-pagination.js"></script>
 
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.min.js"></script>
-	<script src="scripts/vendor/angular-paging.js"></script>
-	<script src="scripts/vendor/angular-tabindex.js"></script>
-	<script src="scripts/vendor/angular-pagination.js"></script>
+    <!--COMPONENTS-->
+    <script src="components/lsPager/lsPager.js"></script>
+    <script src="components/lsGrid/lsGrid.js"></script>
+    <link rel="stylesheet" href="components/lsGrid/lsGrid.css"/>
 
-	<!--COMPONENTS-->
-	<script src="components/lsPager/lsPager.js"></script>
-	<script src="components/lsGrid/lsGrid.js"></script>
-	<link rel="stylesheet" href="components/lsGrid/lsGrid.css" />
-
-	<!--APPLICATION-->
-	<script src="lsGridDemo.js"></script>
+    <!--APPLICATION-->
+    <script src="lsGridDemo.js"></script>
 
 
 </head>
-
-
 <body ng-app="app" ng-controller="demo">
+<h2 style="margin: 20px;">ls-grid: Simple AngularJS grid examples</h2>
+<hr/>
+<h4 style="margin: 20px;">See readme and source at <a href="https://github.com/lev-savranskiy/angular-ls-grid"
+                                                      target="_blank">github</a></h4>
+<h4 style="margin: 20px;">See whole <a href="/folio">Portfolio</a></h4>
+
+<hr/>
+
+
 
 <div style="margin: 20px;">
-	<h4>Local data, auto key based headers</h4>
-	<ls-grid options="options"></ls-grid>
+    <h4>Local data, tableWidth, itemsPerPage,  auto key-based headers</h4>
+    <pre style="height: 200px; width: 40%; overflow: auto">
+var app = angular.module('app', [
+    'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
+]);
+app.controller("demo", function ($scope) {
+    var data = [{
+        "id": 577,
+        "name": "Realcube",
+        "start_date": "2016-12-30",
+        "clicks": 31
+    }, {
+        "id": 561,
+        "name": "JumpXS",
+        "start_date": "2017-02-15",
+        "clicks": 85
+    },
+    var data = [{
+        "id": 577,
+        "name": "Realcube",
+        "start_date": "2016-12-30",
+        "clicks": 31
+    }, {
+        "id": 561,
+        "name": "JumpXS",
+        "start_date": "2017-02-15",
+        "clicks": 85
+    } ... ]
+
+    $scope.options = {
+        tableWidth: '600px',
+        itemsPerPage: 7,
+        data: data
+    };
+});
+&lt;ls-grid options="options">&lt;/ls-grid>
+</pre>
+    <h4>Result</h4>
+    <ls-grid options="options"></ls-grid>
 </div>
 <hr/>
 <div style="margin: 20px;">
-	<h4>Remote data, 3 headers passed</h4>
-	<ls-grid options="options2"></ls-grid>
+    <h4>Remote data, tableWidth, itemsPerPage, 3 headers passed</h4>
+<pre style="height: 200px; width: 40%; overflow: auto">
+var app = angular.module('app', [
+    'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
+]);
+app.controller("demo", function ($scope) {
+   $scope.options2 = {
+        tableWidth: '40%',
+        itemsPerPage: 10,
+        dataUrl: 'api/data.json',
+        headers: {"name": "Name", "start_date": "Start Date", "clicks": "Clicks"}
+    };
+});
+&lt;ls-grid options="options2">&lt;/ls-grid>
+</pre>
+    <h4>Result</h4>
+    <ls-grid options="options2"></ls-grid>
 </div>
 <hr/>
 <div style="margin: 20px;">
-	<h4>No configuration at all</h4>
-	<ls-grid></ls-grid>
+    <h4>No configuration at all</h4>
+    <pre style="height: 130px; width: 40%; overflow: auto">
+var app = angular.module('app', [
+    'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
+]);
+app.controller("demo", function ($scope) {
+});
+&lt;ls-grid>&lt;/ls-grid>
+</pre>
+    <h4>Result</h4>
+    <ls-grid></ls-grid>
 </div>
 <hr/>
 <div style="margin: 20px;">
-	<h4>Bad configuration: wrong remote URL</h4>
-	<ls-grid options="options3"></ls-grid>
+    <h4>Bad configuration: wrong remote URL</h4>
+    <pre style="height: 200px; width: 40%; overflow: auto">
+var app = angular.module('app', [
+    'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
+]);
+app.controller("demo", function ($scope) {
+    $scope.options3 = {
+        dataUrl: 'api/404.json'
+    };
+});
+&lt;ls-grid options="options3">&lt;/ls-grid>
+</pre>
+    <h4>Result</h4>
+    <ls-grid options="options3"></ls-grid>
 </div>
 </body>
 </html>
