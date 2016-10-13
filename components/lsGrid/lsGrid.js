@@ -1,6 +1,6 @@
 angular.module('lsGrid', [])
 
-    .directive('lsGrid', ['$http', '$timeout', function($http, $timeout) {
+    .directive('lsGrid', ['$http', function($http) {
         return {
             scope: {
                 options: "="
@@ -89,7 +89,6 @@ angular.module('lsGrid', [])
                         $http({method: 'GET', url: $scope.options.dataUrl}).then(function (result) {
                             $scope.options.data = result.data;
                             $scope.message = "";
-                            //$timeout(function(){init();}, 1000)
                             init();
 
                         }, function (result) {

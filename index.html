@@ -35,7 +35,7 @@
 
 
 <div style="margin: 20px;">
-    <h4>Local data, tableWidth, itemsPerPage,  auto key-based headers</h4>
+    <h4>Local data, tableWidth, itemsPerPage, 3 headers passed </h4>
     <pre style="height: 200px; width: 40%; overflow: auto">
 var app = angular.module('app', [
     'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
@@ -67,6 +67,7 @@ app.controller("demo", function ($scope) {
     $scope.options = {
         tableWidth: '600px',
         itemsPerPage: 7,
+        headers: {"name": "Name", "start_date": "Start Date", "clicks": "Clicks"},
         data: data
     };
 });
@@ -77,7 +78,7 @@ app.controller("demo", function ($scope) {
 </div>
 <hr/>
 <div style="margin: 20px;">
-    <h4>Remote data, tableWidth, itemsPerPage, 3 headers passed</h4>
+    <h4>Remote data with unknown structure,  headers created based on data. </h4>
 <pre style="height: 200px; width: 40%; overflow: auto">
 var app = angular.module('app', [
     'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
@@ -86,8 +87,7 @@ app.controller("demo", function ($scope) {
    $scope.options2 = {
         tableWidth: '40%',
         itemsPerPage: 10,
-        dataUrl: 'api/data.json',
-        headers: {"name": "Name", "start_date": "Start Date", "clicks": "Clicks"}
+        dataUrl: 'api/data.json'
     };
 });
 &lt;ls-grid options="options2">&lt;/ls-grid>

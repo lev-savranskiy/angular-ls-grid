@@ -510,14 +510,15 @@ app.controller("demo", function ($scope) {
     $scope.options = {
         tableWidth: '600px',
         itemsPerPage: 7,
-        data: data
+        data: data,
+        headers: {"name": "Name", "start_date": "Start Date", "clicks": "Clicks"}
     };
 
     $scope.options2 = {
         tableWidth: '40%',
         itemsPerPage: 10,
-        dataUrl: 'api/data.json',
-        headers: {"name": "Name", "start_date": "Start Date", "clicks": "Clicks"}
+        dataUrl: 'api/data.json'
+
     };
 
     $scope.options3 = {
