@@ -14,7 +14,6 @@ Simple AngularJS grid
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.min.js"></script>
     <script src="scripts/vendor/angular-paging.js"></script>
-    <script src="scripts/vendor/angular-tabindex.js"></script>
     <script src="scripts/vendor/angular-pagination.js"></script>
 
     <!-- LS-GRID COMPONENTS -->
