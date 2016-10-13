@@ -37,9 +37,7 @@
 <div style="margin: 20px;">
     <h4>Local data, tableWidth, itemsPerPage, 3 headers passed </h4>
     <pre style="height: 200px; width: 40%; overflow: auto">
-var app = angular.module('app', [
-    'ui.bootstrap.pagination', 'lsGrid', 'lsPager'
-]);
+var app = angular.module('app', ['lsGrid']);
 app.controller("demo", function ($scope) {
     var data = [{
         "id": 577,
