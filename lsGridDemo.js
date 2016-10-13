@@ -1,3 +1,11 @@
+/**
+ * @name lsGrid usage examples
+ * @author https://github.com/lev-savranskiy
+ * @version 0.1
+ * @category AngularJS plugin
+ * @example http://wap7.ru/folio/angular-ls-grid
+ */
+
 var app = angular.module('app', ['lsGrid']);
 
 

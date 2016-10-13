@@ -1,3 +1,12 @@
+/**
+ * Simple AngularJS grid
+ * @name lsGrid
+ * @author https://github.com/lev-savranskiy
+ * @version 0.1
+ * @category AngularJS plugin
+ * @example http://wap7.ru/folio/angular-ls-grid
+ */
+
 angular.module('lsGrid', [ 'ui.bootstrap.pagination', 'lsPager'])
 
     .directive('lsGrid', ['$http', function($http) {
