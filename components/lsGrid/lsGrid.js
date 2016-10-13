@@ -55,8 +55,8 @@ angular.module('lsGrid', [ 'ui.bootstrap.pagination', 'lsPager'])
                         }
                     };
 
-                    $scope.dir = null;
-                    $scope.field = null;
+                    $scope.dir = 'asc';
+                    $scope.field = $scope.options.sortfield || null;
 
 
                     $scope.sort = function (field) {

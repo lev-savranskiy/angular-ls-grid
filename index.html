@@ -34,7 +34,7 @@
 
 
 <div style="margin: 20px;">
-    <h4>Local data, tableWidth, itemsPerPage, 3 headers passed </h4>
+    <h4>Local data, tableWidth, itemsPerPage, sortfield and 3 headers passed </h4>
     <pre style="height: 200px; width: 40%; overflow: auto">
 var app = angular.module('app', ['lsGrid']);
 app.controller("demo", function ($scope) {
@@ -64,6 +64,7 @@ app.controller("demo", function ($scope) {
     $scope.options = {
         tableWidth: '600px',
         itemsPerPage: 7,
+        sortfield: 'name',
         headers: {"name": "Name", "start_date": "Start Date", "clicks": "Clicks"},
         data: data
     };

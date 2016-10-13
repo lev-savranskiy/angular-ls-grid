@@ -517,6 +517,7 @@ app.controller("demo", function ($scope) {
         tableWidth: '600px',
         itemsPerPage: 7,
         data: data,
+        sortfield: 'name',
         headers: {"name": "Name", "start_date": "Start Date", "clicks": "Clicks"}
     };
 

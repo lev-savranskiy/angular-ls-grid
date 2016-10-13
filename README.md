@@ -2,10 +2,11 @@
 Simple AngularJS grid
 
 # Features
-* Data array or dataUrl is only  required config to start!
+* Data array (or dataUrl) is only  required config to build whole grid
 * Headers are  auto created if missing
 * Every column is sortable
-* Bottom toolbar with info and pagination
+* Initial sort state can be passed
+* Bottom toolbar with info and on client pagination
 * Clear folder structure
 
 # Dependencies
@@ -31,17 +32,22 @@ http://wap7.ru/folio/angular-ls-grid/index.html
 Pass options to directive ls-grid 
 Available options are
 
+Required:
 data - {Array}
 dataUrl - {String}
+
+Optional:
 headers -  {Array}
+sortfield -  {String} initial sort field
 itemsPerPage - {Number}, 20 by default
 tableWidth - {css value}, 90% by default
 ----
 //EXAMPLE 1
-//Width,  itemsPerPage, dataUrl and  headers are passed
+//Width,  itemsPerPage, dataUrl, sortfield and  headers are passed
 $scope.options = {
     tableWidth: '600px',
     itemsPerPage: 15,
+    sortfield: "name",
     dataUrl: 'api/mydata.json',
     headers: {"name": "Name", "start_date": "Start Date", "clicks": "Clicks"}
 };
