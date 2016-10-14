@@ -6,7 +6,7 @@ Simple AngularJS grid
 * Headers are  auto created if missing
 * Every column is sortable
 * Initial sort state can be passed
-* Bottom toolbar with info and on client pagination
+* Bottom toolbar with info and on-client pagination
 * Clear folder structure
 
 # Dependencies
