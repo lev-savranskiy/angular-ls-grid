@@ -1,5 +1,6 @@
 # ls-grid
 Simple AngularJS grid
+
 ![Simple AngularJS grid](https://raw.githubusercontent.com/lev-savranskiy/angular-ls-grid/master/angular-ls-grid.jpg)
 
 
