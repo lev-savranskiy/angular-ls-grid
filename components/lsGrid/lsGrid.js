@@ -55,12 +55,14 @@ angular.module('lsGrid', [ 'ui.bootstrap.pagination', 'lsPager'])
                         }
                     };
 
-                    $scope.dir = 'asc';
-                    $scope.field = $scope.options.sortfield || null;
+
+                    $scope.options.sorter = $scope.options.sorter ||  {field:  null ,  dir:  'desc'};
+
+
 
 
                     $scope.sort = function (field) {
-                        $scope.field = field;
+                        $scope.options.sorter.field = field;
                         $scope.currentPage = 1;
                         $scope.rebuildData(true);
                     };
@@ -69,11 +71,11 @@ angular.module('lsGrid', [ 'ui.bootstrap.pagination', 'lsPager'])
                     $scope.rebuildData = function (toggleSort) {
 
 
-                            if ($scope.field) {
+                            if ( $scope.options.sorter.field) {
                                 if (toggleSort) {
-                                    $scope.dir = $scope.dir == 'asc' ? 'desc' : 'asc';
+                                    $scope.options.sorter.dir = $scope.options.sorter.dir == 'asc' ? 'desc' : 'asc';
                                 }
-                                $scope.current.data = $scope.sortBy($scope.cached.data, $scope.field, $scope.dir);
+                                $scope.current.data = $scope.sortBy($scope.cached.data,  $scope.options.sorter.field, $scope.options.sorter.dir);
                             } else {
                                 $scope.current.data = $scope.cached.data;
                             }

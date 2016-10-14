@@ -1,8 +1,8 @@
 <div class="ls-grid" style="width: {{tableWidth}}; min-width: {{tableMinWidth}}">
     <div   ng-repeat="(key, value) in options.headers" class="ls-grid-header" style="width:{{colWidth}}%; ">
         <div ng-click="sort(key)" title="Click to sort">{{value}}
-        <span class="glyphicon glyphicon-menu-down" ng-show="(dir == 'desc') && (field == key)"></span>
-        <span class="glyphicon glyphicon-menu-up" ng-show="(dir == 'asc') && (field == key)"></span>
+        <span class="glyphicon glyphicon-menu-down" ng-show="(options.sorter.dir == 'desc') && (options.sorter.field == key)"></span>
+        <span class="glyphicon glyphicon-menu-up" ng-show="(options.sorter.dir == 'asc') && (options.sorter.field == key)"></span>
         </div>
     </div>
     <div ng-repeat="item in current.data">
