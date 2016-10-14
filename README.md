@@ -39,16 +39,19 @@ dataUrl - {String}
 
 Optional:
 headers -  {Array}
-sortfield -  {String} initial sort field
+sorter -  {Object} initial sort state {field: fieldname , dir: 'asc|desc'}
 itemsPerPage - {Number}, 20 by default
 tableWidth - {css value}, 90% by default
 ----
 //EXAMPLE 1
-//Width,  itemsPerPage, dataUrl, sortfield and  headers are passed
+//Width,  itemsPerPage, dataUrl, sorter and  headers are passed
 $scope.options = {
     tableWidth: '600px',
     itemsPerPage: 15,
-    sortfield: "name",
+    sorter: {
+       field:  'start_date',
+       dir:  'desc'
+    },
     dataUrl: 'api/mydata.json',
     headers: {"name": "Name", "start_date": "Start Date", "clicks": "Clicks"}
 };
