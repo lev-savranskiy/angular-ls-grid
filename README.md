@@ -1,5 +1,7 @@
 # ls-grid
 Simple AngularJS grid
+![Simple AngularJS grid](https://raw.githubusercontent.com/lev-savranskiy/angular-ls-grid/master/angular-ls-grid.jpg)
+
 
 # Features
 * Data array (or dataUrl) is only  required config to build whole grid
